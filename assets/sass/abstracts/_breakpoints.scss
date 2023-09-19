@@ -1,0 +1,18 @@
+$breakpoints: (
+  'normal': (
+    min-width: 26.5625rem,
+    // 425px
+  ),
+  'medium': (
+    min-width: 48rem,
+    // 768px
+  ),
+  'large': (
+    min-width: 64rem,
+    // 1024px
+  ),
+  'huge': (
+    min-width: 87.5rem,
+    // 1400px
+  ),
+);

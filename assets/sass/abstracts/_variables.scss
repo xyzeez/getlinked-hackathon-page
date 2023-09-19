@@ -1,0 +1,19 @@
+// fonts
+$heading-font: 'Clash Display', sans-serif;
+$clock-font: 'Unica One', cursive;
+$text-font: 'Montserrat', sans-serif;
+
+$font-weights: (
+  'regular': 400,
+  'medium': 500,
+  'semi-bold': 600,
+  'bold': 700,
+);
+
+// colors
+$white: #fff;
+$dark-blue: #150e28;
+$purple: #903aff;
+$purple-soft: #d434fe;
+$border-grey: rgba(255, 255, 255, 0.18);
+$primary-gradient: linear-gradient(270deg, #903aff 0%, #fe34b9 100%);

@@ -1,0 +1,61 @@
+@use 'sass:map';
+@use './variables' as *;
+@use './breakpoints' as *;
+
+// set media-query
+@mixin respond-to($breakpoint) {
+  $raw-query: map.get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+      type-of($raw-query) == 'string',
+      unquote($raw-query),
+      inspect($raw-query)
+    );
+
+    @media screen and #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+             + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+// set display to flex
+@mixin display-flex($direction: column, $align: center, $justify: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// set hover style
+@mixin on-hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+// set font-size
+@mixin font-size($min, $max) {
+  font-size: clamp($min, 3.5vw, $max);
+}
+
+// set heading font
+@mixin heading {
+  font-family: $heading-font;
+  font-weight: map.get($font-weights, bold);
+}
+
+// set sub-heading font
+@mixin sub-heading($weight: bold) {
+  font-family: $text-font;
+  font-weight: map.get($font-weights, $weight);
+}
+
+// set text font
+@mixin text($weight: regular) {
+  font-family: $text-font;
+  font-weight: map.get($font-weights, $weight);
+}

@@ -1,0 +1,42 @@
+@use '../abstracts/' as *;
+@use 'sass:map';
+
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+.skip-btn {
+  font-weight: map.get($font-weights, 'bold');
+}
+
+.btn {
+  @include text;
+  color: $white;
+}
+
+.nav {
+  &__list {
+    @include display-flex;
+    gap: 10px;
+  }
+
+  &__listitem {
+    align-self: start;
+    @include text;
+  }
+
+  &__link {
+    color: $white;
+
+    @include on-hover {
+      &:is(:hover, :active, :focus-visible) {
+        color: transparent;
+        background: $primary-gradient;
+        background-clip: text;
+        -moz-background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@use '../abstracts/' as *;
+
+@keyframes reveal-nav {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 10px;
+  }
+}
+
+@keyframes hide-nav {
+  to {
+    right: -100%;
+  }
+}
+
+@keyframes reveal-backdrop {
+  from {
+    opacity: 0;
+  }
+}
