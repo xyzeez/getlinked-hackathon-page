@@ -78,6 +78,15 @@
     gap: 20px;
   }
 
+  &__list {
+    @include display-flex;
+    gap: 10px;
+  }
+
+  &__listitem {
+    align-self: start;
+  }
+
   @include respond-to(large) {
     position: relative;
     display: flex;

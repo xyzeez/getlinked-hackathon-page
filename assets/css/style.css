@@ -120,15 +120,7 @@ address {
   color: #fff;
 }
 
-.nav__list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
 .nav__listitem {
-  align-self: start;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
 }
@@ -248,6 +240,16 @@ body {
   align-items: start;
   justify-content: center;
   gap: 20px;
+}
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.nav__listitem {
+  align-self: start;
 }
 @media screen and (min-width: 64rem) {
   .nav {

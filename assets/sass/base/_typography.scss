@@ -15,13 +15,7 @@
 }
 
 .nav {
-  &__list {
-    @include display-flex;
-    gap: 10px;
-  }
-
   &__listitem {
-    align-self: start;
     @include text;
   }
 
