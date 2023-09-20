@@ -117,12 +117,14 @@ address {
 .btn {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
+  font-size: 1rem;
   color: #fff;
 }
 
 .nav__listitem {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
+  font-size: clamp(18px, 3.5vw, 16px);
 }
 .nav__link {
   color: #fff;
