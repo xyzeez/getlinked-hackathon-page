@@ -28,7 +28,7 @@
   right: 10px;
   @include display-flex(column, end, space-between);
   gap: 50px;
-  width: min(100%, 348px);
+  width: min(calc(100% - 20px), 348px);
   padding: 28px 35px 50px;
   border: 1px solid $border-grey;
   border-radius: 8px;
