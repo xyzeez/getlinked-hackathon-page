@@ -60,7 +60,8 @@
         right: 0;
         left: 0;
         height: 10px;
-        background-image: url(../images/curved-underline.svg);
+        background-image: url(../images/curved.svg);
+        background-size: contain;
         background-repeat: no-repeat;
       }
     }
@@ -75,9 +76,8 @@
     &::after {
       position: absolute;
       content: '';
-      top: 0;
       left: 5%;
-      bottom: 0;
+      bottom: 10%;
       width: calc(100% - 13%);
       height: 90%;
       background-image: url(../images/hero-overlay.png);
@@ -93,7 +93,13 @@
   }
 
   @include respond-to(medium) {
+    @include display-flex(column, center, end);
+    gap: 40px;
     padding-top: 180px;
+
+    &__abstract {
+      top: 110px;
+    }
 
     &__img-container {
       max-width: 550px;
@@ -103,14 +109,12 @@
   @include respond-to(large) {
     @include display-flex(row, center, space-between);
     gap: 0;
-    padding-top: 0;
 
     &__content {
       @include display-flex(column, start);
-      height: 100dvh;
       width: 50%;
-      padding-top: 120px;
       padding-right: 0;
+      padding-bottom: 50px;
     }
 
     &__heading {
@@ -139,25 +143,25 @@
 
     &__abstract {
       right: 50px;
+
+      &--highlighed {
+        &::after {
+          height: 20px;
+          bottom: -15px;
+        }
+      }
     }
 
     &__img-container {
       max-width: 50%;
-      padding-top: 120px;
-
-      &::after {
-        top: 120px;
-        height: calc(90% - 120px);
-      }
     }
   }
 
   @include respond-to(huge) {
+    padding-top: 0;
+
     &__content {
-      padding-top: 200px;
       padding-left: 100px;
-      z-index: 5;
-      width: 60%;
     }
 
     &__heading {

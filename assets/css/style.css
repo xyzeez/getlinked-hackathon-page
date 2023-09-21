@@ -491,7 +491,8 @@ body {
   right: 0;
   left: 0;
   height: 10px;
-  background-image: url(../images/curved-underline.svg);
+  background-image: url(../images/curved.svg);
+  background-size: contain;
   background-repeat: no-repeat;
 }
 .hero__img-container {
@@ -503,9 +504,8 @@ body {
 .hero__img-container::after {
   position: absolute;
   content: "";
-  top: 0;
   left: 5%;
-  bottom: 0;
+  bottom: 10%;
   width: 87%;
   height: 90%;
   background-image: url(../images/hero-overlay.png);
@@ -519,7 +519,15 @@ body {
 }
 @media screen and (min-width: 48rem) {
   .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    gap: 40px;
     padding-top: 180px;
+  }
+  .hero__abstract {
+    top: 110px;
   }
   .hero__img-container {
     max-width: 550px;
@@ -532,17 +540,15 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 0;
-    padding-top: 0;
   }
   .hero__content {
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    height: 100dvh;
     width: 50%;
-    padding-top: 120px;
     padding-right: 0;
+    padding-bottom: 50px;
   }
   .hero__heading--abstract::before {
     width: 30px;
@@ -561,21 +567,20 @@ body {
   .hero__abstract {
     right: 50px;
   }
+  .hero__abstract--highlighed::after {
+    height: 20px;
+    bottom: -15px;
+  }
   .hero__img-container {
     max-width: 50%;
-    padding-top: 120px;
-  }
-  .hero__img-container::after {
-    top: 120px;
-    height: calc(90% - 120px);
   }
 }
 @media screen and (min-width: 87.5rem) {
+  .hero {
+    padding-top: 0;
+  }
   .hero__content {
-    padding-top: 200px;
     padding-left: 100px;
-    z-index: 5;
-    width: 60%;
   }
   .hero__heading--abstract::before {
     top: -40px;
