@@ -5,10 +5,15 @@ const navMenu = document.querySelector('#navMenu');
 const btnOpenHamburger = document.querySelector('#openHamburger');
 const btnCloseHamburger = document.querySelector('#closeHamburger');
 const backdrop = document.querySelector('#backdrop');
+const navItems = document.querySelectorAll('.nav__inner *');
 
 btnOpenHamburger.addEventListener('click', () => showNav());
 
 btnCloseHamburger.addEventListener('click', () => controlNavClosing());
+
+navItems.forEach((item) =>
+  item.addEventListener('click', () => controlNavClosing())
+);
 
 backdrop.addEventListener('click', () => controlNavClosing());
 
@@ -37,6 +42,7 @@ const controlNavClosing = () => {
   );
   hideNav();
 };
+
 // Timer js
 const hourElement = document.querySelector('#timerHour');
 const minuteElement = document.querySelector('#timerMinute');
