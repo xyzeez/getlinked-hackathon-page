@@ -128,3 +128,49 @@ body {
     }
   }
 }
+
+.faqs {
+  &__heading {
+    @include heading;
+    @include font-size(20px, 32px);
+    text-align: center;
+
+    &--highlighted {
+      display: block;
+      color: $soft-purple;
+    }
+  }
+
+  &__paragraph {
+    @include text;
+    @include font-size(12px, 14px);
+    text-align: center;
+    max-width: 40ch;
+
+    &--highlighted {
+      @include text(semi-bold);
+    }
+  }
+
+  @include respond-to(medium) {
+    &__heading {
+      text-align: start;
+    }
+
+    &__paragraph {
+      text-align: start;
+    }
+  }
+}
+
+.accordion {
+  &__heading {
+    @include text;
+    @include font-size(12px, 14px);
+  }
+
+  &__paragraph {
+    @include text;
+    @include font-size(12px, 14px);
+  }
+}

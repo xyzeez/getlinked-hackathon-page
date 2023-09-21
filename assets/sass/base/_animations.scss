@@ -20,3 +20,10 @@
     opacity: 0;
   }
 }
+
+@keyframes rotate-icon {
+  to {
+    top: -25%;
+    transform: rotate(400deg);
+  }
+}

@@ -301,3 +301,75 @@
     }
   }
 }
+
+.faqs {
+  @include display-flex;
+  padding: 2rem;
+  gap: 60px;
+  border-bottom: 1px solid $border-grey;
+
+  &__img-container {
+    width: min(100%, 270px);
+  }
+
+  &__img {
+    margin-inline: auto;
+  }
+
+  &__content {
+    @include display-flex;
+  }
+
+  &__heading {
+    margin-bottom: 15px;
+  }
+
+  &__paragraph {
+    margin-bottom: 40px;
+  }
+
+  @include respond-to(medium) {
+    @include display-flex(row);
+    padding: 4rem 2rem;
+
+    &__img-container {
+      width: 45%;
+    }
+
+    &__content {
+      @include display-flex(column, start);
+      width: 55%;
+    }
+
+    &__heading {
+      margin-bottom: 25px;
+    }
+  }
+
+  @include respond-to(large) {
+    &__img-container {
+      width: 50%;
+    }
+
+    &__content {
+      width: 50%;
+    }
+
+    &__heading {
+      margin-bottom: 35px;
+    }
+  }
+
+  @include respond-to(huge) {
+    padding-inline: 100px;
+    padding-inline-start: 150px;
+
+    &__img-container {
+      width: 60%;
+    }
+
+    &__content {
+      width: 40%;
+    }
+  }
+}
