@@ -5,13 +5,13 @@
   top: 0;
   @include display-flex(row, center, space-between);
   width: 100%;
-  padding: 28px 35px;
+  padding: 28px 36px;
   border-bottom: 1px solid $border-grey;
   background-color: $dark-blue;
   z-index: 10;
 
   @include respond-to(huge) {
-    padding: 40px 128px;
+    padding: 30px 100px;
   }
 }
 

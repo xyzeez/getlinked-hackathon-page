@@ -5,13 +5,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
+body {
+  color: $white;
+}
+
 .skip-btn {
   font-weight: map.get($font-weights, 'bold');
 }
 
 .btn {
   @include text;
-  font-size: 1rem;
+  @include font-size(14px, 16px);
   color: $white;
 }
 
@@ -34,5 +38,58 @@
         -webkit-text-fill-color: transparent;
       }
     }
+  }
+}
+
+.hero {
+  &__heading {
+    @include heading;
+    @include font-size(32px, 80px);
+    text-align: center;
+
+    &--highlighted {
+      color: $soft-purple;
+    }
+  }
+
+  &__paragraph {
+    @include text;
+    @include font-size(13px, 20px);
+    text-align: center;
+    max-width: 40ch;
+  }
+
+  &__abstract {
+    @include text(bold);
+    font-size: clamp(13px, 4.1vw, 20px);
+    font-style: italic;
+  }
+
+  @include respond-to(large) {
+    &__heading {
+      text-align: left;
+      font-size: clamp(48px, 5vw, 80px);
+    }
+
+    &__paragraph {
+      text-align: left;
+    }
+
+    &__abstract {
+      @include text(bold);
+      font-size: clamp(20px, 2.5vw, 36px);
+      font-style: italic;
+    }
+  }
+}
+
+.timer {
+  &__digit {
+    font-family: $clock-font;
+    @include font-size(48px, 64px);
+  }
+
+  &__tag {
+    font-size: 14px;
   }
 }
