@@ -93,3 +93,38 @@ body {
     font-size: 14px;
   }
 }
+
+.overview {
+  &__heading {
+    @include heading;
+    @include font-size(20px, 32px);
+    text-align: center;
+
+    &--highlighted {
+      display: block;
+      color: $soft-purple;
+    }
+  }
+
+  &__paragraph {
+    @include text;
+    @include font-size(13px, 14px);
+    text-align: center;
+    max-width: 56.5ch;
+
+    &--highlighted {
+      @include text(bold);
+      color: $light-purple;
+    }
+  }
+
+  @include respond-to(medium) {
+    &__heading {
+      text-align: start;
+    }
+
+    &__paragraph {
+      text-align: start;
+    }
+  }
+}

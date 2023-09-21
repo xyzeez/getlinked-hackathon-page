@@ -5,6 +5,7 @@
   gap: 16px;
   min-height: 100vh;
   padding-top: 170px;
+  border-bottom: 1px solid $border-grey;
 
   &__content {
     @include display-flex;
@@ -49,6 +50,7 @@
   &__abstract {
     position: absolute;
     top: 100px;
+    z-index: 5;
 
     &--highlighed {
       position: relative;
@@ -161,6 +163,7 @@
     padding-top: 0;
 
     &__content {
+      padding-top: 200px;
       padding-left: 100px;
     }
 
@@ -197,6 +200,104 @@
 
     &__img-container {
       max-width: 40%;
+      padding-top: 160px;
+    }
+  }
+}
+
+.overview {
+  @include display-flex;
+  padding: 2rem;
+  gap: 60px;
+  border-bottom: 1px solid $border-grey;
+
+  &__img-container {
+    width: min(100%, 270px);
+  }
+
+  &__img {
+    margin-inline: auto;
+  }
+
+  &__content {
+    @include display-flex;
+  }
+
+  &__heading {
+    margin-bottom: 15px;
+  }
+
+  &__paragraph {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__btn {
+    margin-top: 20px;
+  }
+
+  @include respond-to(medium) {
+    @include display-flex(row);
+    padding: 4rem 2rem;
+
+    &:nth-of-type(odd) {
+      @include display-flex(row-reverse);
+    }
+
+    &__img-container {
+      width: 45%;
+    }
+
+    &__content {
+      @include display-flex(column, start);
+      width: 55%;
+    }
+
+    &__heading {
+      margin-bottom: 25px;
+    }
+
+    &__btn {
+      margin-top: 30px;
+    }
+  }
+
+  @include respond-to(large) {
+    &__img-container {
+      width: 50%;
+    }
+
+    &__content {
+      width: 50%;
+    }
+
+    &__paragraph {
+      gap: 10px;
+    }
+
+    &__heading {
+      margin-bottom: 35px;
+    }
+
+    &__btn {
+      margin-top: 40px;
+    }
+  }
+
+  @include respond-to(huge) {
+    padding-inline: 100px;
+
+    &:last-of-type {
+      padding: 6rem 100px;
+    }
+
+    &__paragraph {
+      gap: 20px;
+    }
+
+    &__btn {
+      margin-top: 50px;
     }
   }
 }
