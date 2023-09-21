@@ -37,3 +37,48 @@ const controlNavClosing = () => {
   );
   hideNav();
 };
+// Timer js
+const hourElement = document.querySelector('#timerHour');
+const minuteElement = document.querySelector('#timerMinute');
+const secondElement = document.querySelector('#timerSecond');
+
+const lunchDate = new Date('Nov 18, 2023 00:00:00').getTime();
+let currentTime;
+let launchWaitTime;
+let hours, minutes, seconds;
+
+const countDown = setInterval(() => startTimer(), 1000);
+
+const startTimer = () => {
+  currentTime = new Date().getTime();
+  launchWaitTime = lunchDate - currentTime;
+
+  calculateTime();
+
+  displayTime();
+
+  if (launchWaitTime <= 0) {
+    stopTimer();
+  }
+};
+
+const calculateTime = () => {
+  hours = Math.trunc(
+    (launchWaitTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  minutes = Math.trunc((launchWaitTime % (1000 * 60 * 60)) / (1000 * 60));
+  seconds = Math.trunc((launchWaitTime % (1000 * 60)) / 1000);
+};
+
+const displayTime = () => {
+  hourElement.textContent = hours < 10 ? `0${hours}` : hours;
+  minuteElement.textContent = minutes < 10 ? `0${minutes}` : minutes;
+  secondElement.textContent = seconds < 10 ? `0${seconds}` : seconds;
+};
+
+const stopTimer = () => {
+  clearInterval(countDown);
+  hourElement.textContent = '00';
+  minuteElement.textContent = '00';
+  secondElement.textContent = '00';
+};
