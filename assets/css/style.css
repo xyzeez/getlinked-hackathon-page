@@ -356,6 +356,20 @@ body {
   }
 }
 
+.partners__heading {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 700;
+  font-size: clamp(20px, 3.5vw, 32px);
+  text-align: center;
+}
+.partners__paragraph {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: clamp(12px, 3.5vw, 14px);
+  text-align: center;
+  max-width: 55ch;
+}
+
 /* Styling Ends */
 /* Animation Keyframes */
 @keyframes reveal-nav {
@@ -1230,6 +1244,9 @@ body {
   background-image: url(../images/position1.png);
   background-size: 110%;
 }
+.prizes__position:nth-of-type(3)::before {
+  background-image: url(../images/position3.png);
+}
 .prizes__title {
   margin-top: 50%;
 }
@@ -1287,6 +1304,140 @@ body {
   }
   .prizes__position {
     padding: 30px;
+  }
+}
+
+.partners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+.partners__heading {
+  margin-bottom: 5px;
+}
+.partners__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 30px 15px;
+  margin-top: 40px;
+  border-radius: 5px;
+  border: 1px solid #d434fe;
+  background: rgba(255, 255, 255, 0.01);
+}
+.partners__logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2px;
+  width: min(100%, 900px);
+}
+.partners__logo-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.partners__logo-container:nth-of-type(1), .partners__logo-container:nth-of-type(2), .partners__logo-container:nth-of-type(3) {
+  padding: 0 10px 8px;
+}
+.partners__logo-container:nth-of-type(4), .partners__logo-container:nth-of-type(5), .partners__logo-container:nth-of-type(6) {
+  padding: 8px 10px 0;
+}
+.partners__logo-container::before, .partners__logo-container::after {
+  position: absolute;
+  content: "";
+  background-color: #d434fe;
+}
+.partners__logo-container:nth-of-type(1)::before, .partners__logo-container:nth-of-type(2)::before, .partners__logo-container:nth-of-type(4)::before, .partners__logo-container:nth-of-type(5)::before {
+  right: -3px;
+  height: 80%;
+  width: 2px;
+}
+.partners__logo-container:nth-of-type(1)::before, .partners__logo-container:nth-of-type(2)::before {
+  top: 0;
+}
+.partners__logo-container:nth-of-type(4)::before, .partners__logo-container:nth-of-type(5)::before {
+  bottom: 0;
+}
+.partners__logo-container:nth-of-type(1)::after, .partners__logo-container:nth-of-type(2)::after, .partners__logo-container:nth-of-type(3)::after {
+  bottom: -3px;
+  height: 2px;
+  width: 85%;
+}
+.partners__logo-container:nth-of-type(2)::after {
+  width: 70%;
+}
+.partners__logo-container:nth-of-type(1)::after {
+  left: 0;
+}
+.partners__logo-container:nth-of-type(3)::after {
+  right: 0;
+}
+.partners__logo {
+  width: 100%;
+  max-width: 56px;
+  aspect-ratio: 3/2;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media screen and (min-width: 48rem) {
+  .partners {
+    padding: 6em 2rem;
+  }
+  .partners__heading {
+    margin-bottom: 10px;
+  }
+  .partners__inner {
+    margin-top: 60px;
+    padding: 80px 100px;
+  }
+  .partners__logo-container:nth-of-type(1), .partners__logo-container:nth-of-type(2), .partners__logo-container:nth-of-type(3) {
+    padding: 0 20px 15px;
+  }
+  .partners__logo-container:nth-of-type(4), .partners__logo-container:nth-of-type(5), .partners__logo-container:nth-of-type(6) {
+    padding: 15px 20px 0;
+  }
+  .partners__logo {
+    max-width: 110px;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .partners__inner {
+    margin-top: 60px;
+    padding: 100px 120px;
+  }
+  .partners__logo-container:nth-of-type(1), .partners__logo-container:nth-of-type(2), .partners__logo-container:nth-of-type(3) {
+    padding: 0 35px 25px;
+  }
+  .partners__logo-container:nth-of-type(4), .partners__logo-container:nth-of-type(5), .partners__logo-container:nth-of-type(6) {
+    padding: 25px 35px 0;
+  }
+  .partners__logo {
+    max-width: 180px;
+  }
+}
+@media screen and (min-width: 87.5rem) {
+  .partners {
+    padding: 8rem 100px;
+  }
+  .partners__inner {
+    margin-top: 100px;
+    padding: 130px 150px;
+  }
+  .partners:nth-of-type(1), .partners:nth-of-type(2), .partners:nth-of-type(3) {
+    padding: 0 55px 45px;
+  }
+  .partners:nth-of-type(4), .partners:nth-of-type(5), .partners:nth-of-type(6) {
+    padding: 45px 55px 0;
+  }
+  .partners__logo {
+    max-width: 230px;
   }
 }
 
