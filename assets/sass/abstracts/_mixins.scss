@@ -30,6 +30,13 @@
   justify-content: $justify;
 }
 
+// set display to flex
+@mixin display-grid($columns: auto, $rows: auto) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+}
+
 // set hover style
 @mixin on-hover {
   @media (hover: hover) {

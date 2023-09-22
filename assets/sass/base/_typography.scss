@@ -235,3 +235,53 @@ body {
     }
   }
 }
+
+.prizes {
+  &__heading {
+    @include heading;
+    @include font-size(20px, 32px);
+    text-align: center;
+
+    &--highlighted {
+      display: block;
+      color: $soft-purple;
+    }
+  }
+
+  &__paragraph {
+    @include text;
+    @include font-size(12px, 14px);
+    text-align: center;
+    max-width: 35ch;
+  }
+
+  &__title {
+    @include text(bold);
+    font-size: clamp(12px, 2vw, 24px);
+    text-align: center;
+
+    &--highlighted {
+      color: $soft-purple;
+    }
+  }
+
+  &__position:nth-of-type(2) &__title--highlighted {
+    color: $purple;
+  }
+
+  @include respond-to(medium) {
+    &__heading {
+      text-align: left;
+    }
+
+    &__paragraph {
+      text-align: left;
+    }
+
+    &__title {
+      &--highlighted {
+        font-size: clamp(18px, 2vw, 32px);
+      }
+    }
+  }
+}

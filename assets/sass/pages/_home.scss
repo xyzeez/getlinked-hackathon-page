@@ -574,3 +574,143 @@
     }
   }
 }
+
+.prizes {
+  @include display-grid($rows: repeat(2, auto));
+  row-gap: 40px;
+  padding: 4rem 0rem;
+
+  &__content {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-inline: auto;
+  }
+
+  &__heading {
+    margin-bottom: 5px;
+  }
+
+  &__img-container {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin-inline: auto;
+    width: min(100%, 270px);
+  }
+
+  &__img {
+    margin-inline: auto;
+  }
+
+  &__inner {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    @include display-flex(row);
+    gap: 12px;
+    margin-top: 25%;
+    margin-inline: auto;
+  }
+
+  &__position {
+    position: relative;
+    @include display-flex;
+    min-height: 125px;
+    min-width: 90px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid $soft-purple;
+    background-color: rgba(212, 52, 254, 0.12);
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: -45%;
+      width: 80%;
+      aspect-ratio: 2/3;
+      background-image: url(../images/position2.png);
+      background-size: 120%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:nth-of-type(2) {
+      transform: translateY(10px);
+      border-color: $purple;
+      background-color: rgba(144, 58, 255, 0.12);
+
+      &::before {
+        top: -85%;
+        width: 120%;
+        aspect-ratio: 2/3;
+        background-image: url(../images/position1.png);
+        background-size: 110%;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 50%;
+
+    & > span {
+      display: block;
+    }
+  }
+
+  &__position:nth-of-type(2) &__title {
+    margin-top: 30%;
+  }
+
+  @include respond-to(medium) {
+    @include display-grid(40% 60%, repeat(2, max-content));
+    padding: 6rem 2rem;
+
+    &__content {
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+
+    &__img-container {
+      grid-column: 1/2;
+      grid-row: 1/3;
+      @include display-flex;
+    }
+
+    &__inner {
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+
+    &__position {
+      padding: 20px;
+
+      &::before {
+        top: -50%;
+      }
+
+      &:nth-of-type(2) {
+        &::before {
+          top: -85%;
+        }
+      }
+    }
+
+    &__title {
+      margin-top: 55%;
+    }
+
+    &__position:nth-of-type(2) &__title {
+      margin-top: 58%;
+    }
+  }
+
+  @include respond-to(large) {
+    padding: 8rem 100px;
+
+    &__img-container {
+      width: 100%;
+    }
+
+    &__position {
+      padding: 30px;
+    }
+  }
+}
