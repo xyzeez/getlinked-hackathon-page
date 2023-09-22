@@ -174,3 +174,64 @@ body {
     @include font-size(12px, 14px);
   }
 }
+
+.timeline {
+  &__heading {
+    @include heading;
+    @include font-size(20px, 32px);
+    text-align: center;
+  }
+
+  &__paragraph {
+    @include text;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  &__event {
+    &::before {
+      @include text(bold);
+      font-size: clamp(12px, 2.5vw, 24px);
+      text-align: center;
+    }
+  }
+
+  &__title {
+    @include text(bold);
+    font-size: clamp(12px, 2.5vw, 24px);
+    color: $soft-purple;
+  }
+
+  &__info {
+    @include text;
+    font-size: clamp(12px, 2vw, 16px);
+  }
+
+  &__date {
+    @include text(bold);
+    font-size: clamp(12px, 2.5vw, 24px);
+    color: $soft-purple;
+  }
+
+  @include respond-to(medium) {
+    &__title {
+      text-align: end;
+    }
+
+    &__event-container:nth-of-type(even) &__title {
+      text-align: start;
+    }
+
+    &__info {
+      text-align: end;
+    }
+
+    &__event-container:nth-of-type(even) &__info {
+      text-align: start;
+    }
+
+    &__event-container:nth-of-type(even) &__date {
+      text-align: end;
+    }
+  }
+}
