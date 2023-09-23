@@ -1,0 +1,10 @@
+@use '../abstracts/' as *;
+
+.logo {
+  display: block;
+  max-width: 100px;
+
+  @include respond-to(large) {
+    max-width: 170px;
+  }
+}

@@ -362,3 +362,38 @@ body {
     }
   }
 }
+
+.footer {
+  &__paragraph {
+    @include text;
+    font-size: 12px;
+    max-width: 55ch;
+  }
+
+  &__heading {
+    @include text(semi-bold);
+    font-size: 14px;
+    color: $soft-purple;
+  }
+
+  &__sub-heading {
+    @include text;
+    font-size: 12px;
+    color: $soft-purple;
+  }
+
+  &__link {
+    @include text;
+    font-size: 12px;
+  }
+
+  &__copyright {
+    @include text;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  &__address > &__link:last-of-type {
+    max-width: 15ch;
+  }
+}
