@@ -1117,9 +1117,11 @@ body::-webkit-scrollbar-thumb {
 .overview__heading {
   margin-bottom: 15px;
 }
-.overview__paragraph {
-  display: inline-flex;
+.overview__list {
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
 }
 .overview__btn {
@@ -1163,7 +1165,7 @@ body::-webkit-scrollbar-thumb {
   .overview__content {
     width: 50%;
   }
-  .overview__paragraph {
+  .overview__list {
     gap: 10px;
   }
   .overview__heading {
@@ -1180,7 +1182,7 @@ body::-webkit-scrollbar-thumb {
   .overview:last-of-type {
     padding: 6rem 100px;
   }
-  .overview__paragraph {
+  .overview__list {
     gap: 20px;
   }
   .overview__btn {

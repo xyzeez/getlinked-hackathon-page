@@ -227,9 +227,8 @@
     margin-bottom: 15px;
   }
 
-  &__paragraph {
-    display: inline-flex;
-    flex-direction: column;
+  &__list {
+    @include display-flex;
     gap: 5px;
   }
 
@@ -272,7 +271,7 @@
       width: 50%;
     }
 
-    &__paragraph {
+    &__list {
       gap: 10px;
     }
 
@@ -292,7 +291,7 @@
       padding: 6rem 100px;
     }
 
-    &__paragraph {
+    &__list {
       gap: 20px;
     }
 
