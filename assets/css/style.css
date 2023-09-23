@@ -829,7 +829,7 @@ body::-webkit-scrollbar-thumb {
 .footer__quicklinks {
   max-width: -moz-max-content;
   max-width: max-content;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 .footer__quicklinks .footer__link {
   margin-bottom: 12px;
