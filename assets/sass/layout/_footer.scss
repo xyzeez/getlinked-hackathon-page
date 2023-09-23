@@ -3,6 +3,7 @@
 .footer {
   @include display-flex;
   padding: 3.5rem 2rem 2rem;
+  margin-top: auto;
   background-color: #100b20;
 
   &__inner {

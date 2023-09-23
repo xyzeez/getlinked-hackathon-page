@@ -535,7 +535,14 @@ body {
 
 /* Styling Ends */
 /* Body styling */
+html {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   background-color: #150e28;
 }
 
@@ -756,6 +763,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 3.5rem 2rem 2rem;
+  margin-top: auto;
   background-color: #100b20;
 }
 .footer__inner {
