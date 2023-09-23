@@ -300,3 +300,65 @@ body {
     max-width: 55ch;
   }
 }
+
+.policy {
+  &__heading {
+    @include heading;
+    @include font-size(20px, 32px);
+    text-align: center;
+
+    &--highlighted {
+      display: block;
+      color: $soft-purple;
+    }
+  }
+
+  &__date {
+    @include text;
+    @include font-size(12px, 14px);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  &__paragraph {
+    @include text;
+    @include font-size(12px, 14px);
+    text-align: center;
+
+    &--highlighted {
+      @include text(bold);
+      @include font-size(12px, 14px);
+      text-align: start;
+    }
+  }
+
+  &__sub-heading {
+    @include text(bold);
+    @include font-size(13px, 16px);
+    color: $soft-purple;
+  }
+
+  &__list {
+    @include text;
+    @include font-size(12px, 14px);
+  }
+
+  @include respond-to(medium) {
+    &__heading {
+      text-align: left;
+    }
+
+    &__date {
+      text-align: left;
+    }
+
+    &__paragraph {
+      text-align: left;
+      max-width: 45ch;
+    }
+
+    &__date + &__paragraph {
+      max-width: 48ch;
+    }
+  }
+}

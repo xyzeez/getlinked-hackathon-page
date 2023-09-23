@@ -722,6 +722,7 @@
 .partners {
   @include display-flex;
   padding: 4rem 2rem;
+  border-bottom: 1px solid $border-grey;
 
   &__heading {
     margin-bottom: 5px;
@@ -886,11 +887,159 @@
     &:nth-of-type(4),
     &:nth-of-type(5),
     &:nth-of-type(6) {
-      padding: 45px 55px 0;
+      padding: 4 5px 55px 0;
     }
 
     &__logo {
       max-width: 230px;
+    }
+  }
+}
+
+.policy {
+  @include display-flex;
+  gap: 20px;
+  padding: 4rem 2rem;
+
+  &__heading {
+    margin-bottom: 5px;
+  }
+
+  &__date {
+    margin-bottom: 20px;
+  }
+
+  &__inner {
+    // @include display-flex(column, flex-start);
+    width: min(100%, 569px);
+    padding: 45px 15px;
+    margin-top: 30px;
+    border-radius: 5px;
+    border: 1px solid $soft-purple;
+    background-color: rgba(217, 217, 217, 0.03);
+  }
+
+  &__sub-heading {
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  &__paragraph--highlighted {
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    padding-inline-start: 40px;
+  }
+
+  &__listitem {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 5px;
+      left: -30px;
+      width: 17px;
+      height: 17px;
+      background-image: url(../icons/list\ marker.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &:first-of-type {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__btn {
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+
+  &__img-container {
+    padding: 100px 0 80px;
+    width: min(100%, 270px);
+    background-image: url(../images/policy-bg.png);
+    background-size: 249px auto;
+    background-position: center 5%;
+    background-repeat: no-repeat;
+  }
+
+  &__img {
+    margin-inline: auto;
+  }
+
+  @include respond-to(medium) {
+    @include display-flex(row, center, space-between);
+    padding: 6rem 2rem;
+
+    &__content {
+      width: 50%;
+    }
+
+    &__heading {
+      margin-bottom: 10px;
+    }
+
+    &__inner {
+      padding: 45px 25px;
+      margin-top: 45px;
+    }
+
+    &__img-container {
+      width: 50%;
+      padding: 150px 0 80px;
+      background-size: 100% auto;
+      background-position: center 5%;
+    }
+  }
+
+  @include respond-to(large) {
+    gap: 50px;
+
+    &__heading {
+      margin-bottom: 14px;
+    }
+
+    &__date {
+      margin-bottom: 25px;
+    }
+
+    &__inner {
+      padding: 50px 35px;
+      margin-top: 55px;
+    }
+  }
+
+  @include respond-to(huge) {
+    padding: 8rem 100px;
+
+    &__heading {
+      margin-bottom: 17px;
+    }
+
+    &__date {
+      margin-bottom: 30px;
+    }
+
+    &__inner {
+      padding: 60px 40px;
+      padding-left: 70px;
+      margin-top: 69px;
+    }
+
+    &__btn {
+      margin-left: calc(50% - 96px);
+    }
+
+    &__img-container {
+      width: 50%;
+      padding: 0;
+      padding-top: 200px;
+      background-size: auto 648px;
+      background-position: center 0%;
     }
   }
 }
